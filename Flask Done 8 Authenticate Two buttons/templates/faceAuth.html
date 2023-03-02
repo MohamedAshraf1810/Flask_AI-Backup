@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+<!-- TITLE -->
+{% block title %} Authenticate Face {% endblock %}
+
+<!-- STYLE SHEETS -->
+{% block style %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/login.css')}}">   
+<link rel="stylesheet" href="{{url_for('static',filename='css/face.css')}}">   
+{% endblock %}
+
+
+<!-- BODY -->
+
+{% block content %}
+
+<div id="preloader"></div>
+
+<section class="BDFSection" id="popUpSection">
+    <div class="BDFSectionCON1 BDFSectionCON1Edit">
+        <div class="S1Cn1D1">
+            <div>
+                <img src="{{url_for('static',filename='images/FaceR2.png')}}" alt="Avatar" width="60%" height="60%"><br><br><br><br>
+                <span class="S1Cn1D1spn1">Face Regonition</span><br>
+            </div>
+        </div>
+        <div class="S1Cn1D2">
+            <div>
+                <div>
+                    <h1 id="AuthTitle">Authentication</h1>
+                </div>
+                        
+                <div id="container">
+                    <video id="videoElement" name='vid' autoplay playsinline></video>
+                    <canvas style="display: none;" width="400" height="350" id="CANVAS" name="CANVAS">Your browser does not support Canvas.</canvas>
+                </div>
+                <div class="capBtnControl">
+                    <button style="display: inline;" id="facebtn" class="photoCaptureBtn"></button>
+                </div>
+                
+
+                <form id="myform" method="post">
+                    <button style="display: inline;" id="authbtn" class="bn632-hover bn25">Authenticate</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="{{url_for('static',filename='js/face.js')}}"></script>
+
+{% endblock %}
+
+<!-- END BODY -->
+
+
