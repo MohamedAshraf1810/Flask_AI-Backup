@@ -1,0 +1,17 @@
+You can limit user access to routes in Flask using the @login_required decorator. This decorator will check if the user is logged in before allowing them to access the route.
+
+Example:
+
+from flask import Flask, redirect, url_for 
+from flask_login import LoginManager
+login_required app = Flask(_name_)
+login_manager = LoginManager()
+login_manager.init_app(app)
+@app.route('/') 
+def index(): 
+    return 'Index Page' @app.route('/protected') 
+    
+    
+    @login_required 
+        def protected(): return 'Protected Page' 
+    if _name_ == '_main_': app.run()
